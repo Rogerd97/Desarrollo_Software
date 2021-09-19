@@ -1,0 +1,17 @@
+1. Para cambiar la dirección y definir el reporsitorio local escribo "cd" + 
+la dirección de la carpeta
+
+git init -> inicializa el repositorio
+git remote add origin + URL -> conecta el repositorio local con el web
+
+- subir contenido -> push
+
+Copiar direccion del repo local
+C:\Users\ROGER GONZALEZ\Dropbox\Mi PC (LAPTOP-418JAPR9)\Desktop\MINTIC\DESARROLLO DE SOFTWARE
+
+git status -> nos muestra los archivos que no se han subido a la web
+
+subir archivo:
+
+git add <nombre_archivo>
+git add . sube todos los archivos

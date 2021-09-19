@@ -1,0 +1,51 @@
+#Desarrollo interactivo 
+
+listaCompras = {}
+while True:
+  art = input("¿Qué articulo deseas comprar? ")
+  cant = input("¿Qué cantidad deseas comprar? ")
+
+  listaCompras[art] = int(cant)
+
+  if input("¿Deseas seguir comprando? (s/n) ") == "n":
+    break
+
+#FUNCIONES
+def totalCarrito(lista_compras):
+  total = 0
+  for item in lista_compras:
+    subtotal = productos[item[0]]*int(item[1])
+    total += subtotal
+  return total
+
+def resumenCompra(lista_compras):
+  msg = "Resumen de compra:\nArtículo\tCantidad\tSubtotal\n"
+  for item in lista_compras:
+    msg += item[0] + "\t" + str(item[1]) + "\t\t" + str(totalCarrito([item,])) + "\n"
+  msg += "TOTAL\t" + str(totalCarrito(lista_compras))
+  return msg
+
+def eliminarArticulo(lista_compras, articulo):
+  for item in lista_compras:
+    if articulo in item:
+      lista_compras.remove(item)
+      break
+  return lista_compras
+
+#DESARROLLO INTERACTIVO
+listaCompras = []
+while True:
+  art = input("\n¿Qué artículo deseas comprar? ")
+  cant = input("¿Cuántas unidades desas? ")
+
+  listaCompras.append((art, cant))
+
+  print(resumenCompra(listaCompras))
+
+  if input("¿Deseas eliminar un artículo del carrito? (s/n) ") == "s":
+    listaCompras = eliminarArticulo(listaCompras, input("Escribe el nombre del artículo: "))
+    print(resumenCompra(listaCompras))
+
+  if input("¿Deseas seguir comprando? (s/n) ") == "n":
+    break
+  print("----------------------------------------------------------------")
